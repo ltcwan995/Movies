@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>异步demo</title>
+</head>
+<body ng-app="myApp" ng-controller="myCtrl">
+<input ng-model="val"></input>
+<script src="node_modules/angular/angular.js"></script>
+<script>
+    var app = angular.module('myApp',[]);
+    app.controller("myCtrl", function ($scope,$timeout) {
+        $scope.val = "小小红";
+        $timeout(function () {
+            $scope.val = "小红";
+            $scope.$apply()//手动提醒$scope和原来的进行比较
+        },1000)
+        console.log($scope.val)
+    })
+    //复习：我们使用过哪些服务
+    //$timeout,$scope,$window,$routeProvide,$routeParams,$http,$interval,$location
+    //这些service有什么特点：类似一些公共的方法，当要使用这些方法的时候，
+    // 直接在参数中，注入这个服务就可以
+    //我们可不可以自己定义一些公共的service：可以
+</script>
+</body>
+</html>

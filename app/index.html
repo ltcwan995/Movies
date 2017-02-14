@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>电影信息展示，完整版</title>
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/wap.css">
+</head>
+
+<body ng-app="moviecat" ng-controller="setLocal">
+    <!-- 顶部导航栏开始 -->
+    <div class="top">
+        <div class="header">
+            <a href="#/home_page"><img src="assets/img/movelogo.jpg" alt=""></a>
+            <div class="search">
+                <form ng-submit="submit()">
+                    <input ng-model="val" class="my-input" type="text" placeholder="电影搜索" >
+                    <button>搜索</button>
+                </form>
+            </div>
+        </div>
+        <nav class="nav">
+            <ul>
+                <!--li中添加 active 类样式，显示焦点状态。-->
+                <li class="active"><a href="#/home_page">首页</a></li>
+                <li><a href="#/in_theaters">正在热映</a></li>
+                <li><a href="#/coming_soon">即将上映</a></li>
+                <li><a href="#/top250">Top250</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="container" ng-view>
+        <!-- 顶部导航栏结束 -->
+
+        <!-- 首页开始 -->
+
+        <!-- 首页结束 -->
+
+        <!--电影列表开始-->
+
+        <!--电影列表结束-->
+
+        <!-- 电影详情开始 -->
+
+        <!-- 电影详情结束 -->
+        <!--其他-->
+    </div>
+    <footer class="footer">
+        <div class="container">
+            <p>版权所有&copy; 前端好爱者联盟(允许侵权)</p>
+        </div>
+    </footer>
+    <script src="assets/js/prefixfree.min.js"></script>
+    <script type="text/javascript" src="angular.js" ></script>
+    <script type="text/javascript" src="angular-route.js" ></script>
+    <script src="service.js"></script>
+    <!--<script src="coming_soon/coming_soon.js"></script>-->
+    <!--<script src="in_theaters/in_theaters.js"></script>-->
+    <script src="movieType/movieType.js"></script>
+    <script src="home_page/home_page.js"></script>
+    <script src="detail/detail.js"></script>
+    <script src="search/search.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>

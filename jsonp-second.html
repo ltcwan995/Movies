@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jsonpSecond</title>
+</head>
+<body>
+<script>
+    //刚刚我们定义了一个方法可以传url，data，fn
+    //url： http://api.douban.com/v2/movie/top250
+    //data：{count:5,start:100}
+    //fn:function(response){
+    //     $scope.data = response;
+    //    console.log(data)
+    // }
+    //难点在于我要给我传入的函数随机取一个名字，然后把我取的名字告诉后台
+    //callback=test
+    //刚刚我们发过请求了：
+    var fnName = 'jsonp'+ Math.random().toString().substr(2);
+    window[fnName] =fn;
+
+</script>
+<script src="http://api.douban.com/v2/movie/top250?count=5&start=100&callback="+fnName>
+   test(fjdslkjfdj)
+</script>
+</body>
+</html>
